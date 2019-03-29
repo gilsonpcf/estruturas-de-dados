@@ -1,2 +1,1 @@
-# estruturas-de-dados
-Disciplina: Estrutura de Dados
+# Estruturas de Dados
