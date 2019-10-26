@@ -1,89 +1,75 @@
 public class ListaDinamica {
 	private No primeiro;
 	private No ultimo;
-	private int tamanho;
 
-	public ListaDinamica()
-	{
+	public ListaDinamica() {
 		primeiro = null;
 		ultimo = null;
-		tamanho = 0;
 	}
 
-	public void adicionarFinal(int valor)
-	{
+	public void adicionarFinal(int valor) {
 		No novo = new No(valor);
 
 		if (primeiro == null) {
 			primeiro = novo;
 			ultimo = novo;
-		}
-		else {
-			ultimo.setProximo(novo);
+		} else {
+			ultimo.proximo = novo;
 			ultimo = novo;
 		}
-
-		tamanho++;
 	}
 
-	public void adicionarPosicao(int valor, int pos)
-	{
-	}
-
-	public void adicionarInicio(int valor)
-	{
+	public void adicionarInicio(int valor) {
 		No novo = new No(valor);
 
 		if (primeiro == null) {
 			primeiro = novo;
 			ultimo = novo;
-		}
-		else {
-			novo.setProximo(primeiro);
+		} else {
+			novo.proximo = primeiro;
 			primeiro = novo;
 		}
-
-		tamanho++;
 	}
 
-	public void removerFinal()
-	{
-	}
-
-	public void removerPosicao(int pos)
-	{
-	}
-
-	public void removerInicio()
-	{
-	}
-
-	public int buscar(int valor)
-	{
-
-		return -1;
-	}
-
-	public boolean vazia()
-	{
-		if (primeiro == null)
-			return true;
-
-		return false;
-	}
-
-	public int getTamanho()
-	{
-		return tamanho;
-	}
-
-	public void exibir()
-	{
-		No aux = primeiro;
-		
-		while (aux != null) {
-			System.out.print(aux.getDado() + " ");
-			aux = aux.getProximo();
+	public void removerInicio() {
+		if (primeiro != null) {
+			if (primeiro == ultimo) {
+				primeiro = null;
+				ultimo = null;
+			} else {
+				No aux = primeiro;
+				primeiro = primeiro.proximo;
+				aux.proximo = null;
+			}
 		}
+	}
+
+	public void removerFinal() {
+		if (ultimo != null) {
+			if (primeiro == ultimo) {
+				primeiro = null;
+				ultimo = null;
+			} else {
+				No atual = primeiro;
+
+				while (atual.proximo != ultimo) {
+					atual = atual.proximo;
+				}
+
+				ultimo = atual;
+				ultimo.proximo = null;
+			}
+		}
+	}
+
+	public void exibir() {
+		No atual = primeiro;
+
+		while (atual != null) {
+			System.out.print(atual.valor + " ");
+			atual = atual.proximo;
+		}
+
+		System.out.println();
 	}
 }
