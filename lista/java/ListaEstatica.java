@@ -63,22 +63,22 @@ public class ListaEstatica {
 		return -1;
 	}
 
-	public boolean vazia() {
-		if (tamanho == 0)
-			return true;
-
-		return false;
-	}
-
-	public int getTamanho() {
-		return tamanho;
-	}
-
 	public void exibir() {
 		for (int i = 0; i < tamanho; i++) {
 			System.out.print(v[i] + " ");
 		}
 
 		System.out.println();
+	}
+
+	public boolean vazia() {
+		if (tamanho == 0)
+			return true;
+		else
+			return false;
+	}
+
+	public int getTamanho() {
+		return tamanho;
 	}
 }
