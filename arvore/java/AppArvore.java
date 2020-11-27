@@ -1,24 +1,26 @@
 public class AppArvore {
+    public static void main(String[] args) {
+        ArvoreBinariaBusca arvore = new ArvoreBinariaBusca();
 
-	public static void main(String[] args) {
-		ArvoreBinariaBusca a = new ArvoreBinariaBusca();
+        arvore.adicionar(7);
+        arvore.adicionar(5);
+        arvore.adicionar(12);
+        arvore.adicionar(2);
+        arvore.adicionar(6);
+        arvore.adicionar(9);
+        arvore.adicionar(21);
+        arvore.adicionar(19);
+        arvore.adicionar(25);
 
-		a.adicionar(6);
-		a.adicionar(2);
-		a.adicionar(8);
-		a.adicionar(1);
-		a.adicionar(4);
-		a.adicionar(7);
-		a.adicionar(9);
-		a.adicionar(3);
-		a.adicionar(5);
+        arvore.exibirPreOrdem();
+        arvore.exibirEmOrdem();
+        arvore.exibirPosOrdem();
 
-		a.exibirPreOrdem();
-		a.exibirEmOrdem();
-		a.exibirPosOrdem();
+        System.out.println(arvore.pesquisar(9));
+        System.out.println(arvore.pesquisar(10));
 
-		System.out.println(a.pesquisar(9));
-		System.out.println(a.pesquisar(10));
-	}
+        arvore.remover(9);
 
+        System.out.println(arvore.pesquisar(9));
+    }
 }
