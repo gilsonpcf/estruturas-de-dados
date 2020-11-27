@@ -14,7 +14,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public void adicionar(int valor, No raiz) {
+	private void adicionar(int valor, No raiz) {
 		if (valor < raiz.valor) {
 			if (raiz.esquerda == null) {
 				raiz.esquerda = new No(valor);
@@ -42,7 +42,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public boolean pesquisar(int valor, No raiz) {
+	private boolean pesquisar(int valor, No raiz) {
 		if (valor == raiz.valor) {
 			return true;
 		}
@@ -72,7 +72,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public void remover(int valor, No raiz, No pai) {
+	private void remover(int valor, No raiz, No pai) {
 		if (valor == raiz.valor) {
 			if (raiz.esquerda == null && raiz.direita == null) {      // Nó não tem filhos
 				if (raiz == pai.esquerda)    // Nó é filho esquerdo?
@@ -107,7 +107,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public int menorValor(No raiz) {
+	private int menorValor(No raiz) {
 		if (raiz.esquerda == null)
 			return raiz.valor;
 		else
@@ -121,7 +121,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public void exibirPreOrdem(No raiz) {
+	private void exibirPreOrdem(No raiz) {
 		System.out.print(raiz.valor + " ");
 
 		if (raiz.esquerda != null) {
@@ -140,7 +140,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public void exibirEmOrdem(No raiz) {
+	private void exibirEmOrdem(No raiz) {
 		if (raiz.esquerda != null) {
 			exibirEmOrdem(raiz.esquerda);
 		}
@@ -159,7 +159,7 @@ public class ArvoreBinariaBusca {
 		}
 	}
 
-	public void exibirPosOrdem(No raiz) {
+	private void exibirPosOrdem(No raiz) {
 		if (raiz.esquerda != null) {
 			exibirPosOrdem(raiz.esquerda);
 		}
