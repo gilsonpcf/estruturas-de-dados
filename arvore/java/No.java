@@ -1,11 +1,11 @@
 public class No {
-	public int valor;
-	public No esquerda;
-	public No direita;
+    public int valor;
+    public No esquerda;
+    public No direita;
 
-	public No(int valor) {
-		this.valor = valor;
-		esquerda = null;
-		direita = null;
-	}
+    public No(int valor) {
+        this.valor = valor;
+        this.esquerda = null;
+        this.direita = null;
+    }
 }
