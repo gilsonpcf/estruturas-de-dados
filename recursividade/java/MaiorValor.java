@@ -1,22 +1,20 @@
-
 public class MaiorValor {
+    public static int max(int v[], int n) {
+        if (n == v.length - 1) {
+            return v[n];
+        } else {
+            int valor = max(v, n + 1);
 
-	public static int Max(int[] v, int n) {
-		if (n == 1)
-			return v[0];
+            if (v[n] > valor)
+                return v[n];
+            else
+                return valor;
+        }
+    }
 
-		int aux = Max(v, n-1);
+    public static void main(String[] args) {
+        int vetor[] = {7, 3, 1, 6, 5, 9, 2, 0, 4, 8};
 
-		if (v[n-1] > aux)
-			return v[n-1];
-		else
-			return aux;
-	}
-	
-	public static void main(String[] args) {
-		int[] v = {3, 5, 7, 2, 1, 10, 9, 6, 4, 8};
-		
-		System.out.println("Maior elemento: " + Max(v, v.length));
-	}
-
+        System.out.println(max(vetor, 0));
+    }
 }
